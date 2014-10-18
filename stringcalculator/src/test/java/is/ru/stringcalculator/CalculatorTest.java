@@ -44,9 +44,15 @@ public class CalculatorTest {
 	public void testNegatives() {
 		assertEquals(throw IllegalArgumentException("Negatives not allowed: -1", Calculator.add("-1,2"));
 	}*/
-	
+
 	@Test
 	public void testNotBig() {
 		assertEquals(2, Calculator.add("1001,2"));
 	}
+
+	/*
+	@Test
+	public void testDelimitersLength() {
+		assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+	}*/
 }

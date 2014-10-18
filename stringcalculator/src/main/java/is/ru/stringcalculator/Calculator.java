@@ -1,26 +1,26 @@
 package is.ru.stringcalculator;
+import java.util.regex.Pattern;
 
 public class Calculator {
 
 	public static int add(String text){
-		if(text.equals("")){	
+		if(text.equals("")){
 			return 0;
 		}
 		else if(text.startsWith("//"))
-		{
-			//String numbers = text.subSequence("//","\n");
-			String numbers = text.substring(2,3);
-			String numb = text.substring(4);
-			String[] result = numb.split(numbers);
-			return sum(result);
+                {
+                        String numbers = text.substring(2,3);
+                       	String numb = text.substring(4);
+                       	String[] result = numb.split(numbers);
+                       	return sum(result);
 		}
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
-		else 
+		else
 			return 1;
 	}
-           
+
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
@@ -38,7 +38,5 @@ public class Calculator {
 		}
 		return total;
 	}
-	
 }
-
 
