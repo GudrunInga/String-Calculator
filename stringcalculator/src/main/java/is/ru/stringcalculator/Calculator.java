@@ -6,6 +6,14 @@ public class Calculator {
 		if(text.equals("")){	
 			return 0;
 		}
+		else if(text.startsWith("//"))
+		{
+			//String numbers = text.subSequence("//","\n");
+			String numbers = text.substring(2,3);
+			String numb = text.substring(4);
+			String[] result = numb.split(numbers);
+			return sum(result);
+		}
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
