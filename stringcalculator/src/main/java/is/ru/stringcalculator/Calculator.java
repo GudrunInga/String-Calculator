@@ -7,12 +7,24 @@ public class Calculator {
 			return 0;
 		}
 		else if(text.contains(",") || text.contains("\n")){
-        		return sum(splitNumbers(text));
-    		}
+			String[] numbers = splitNumbers(text);
+			int total = 0;
+			for(String number : numbers)
+			{
+				if(toInt(number) > 1000)
+				{
+					continue;
+				}
+				else if(toInt(number) <= 1000)
+					total += toInt(number);	
+			}
+			return total; 
+    			
+		}
 		else 
 			return 1;
 	}
-
+           
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
@@ -28,4 +40,7 @@ public class Calculator {
 		}
 		return total;
 	}
+	
 }
+
+
