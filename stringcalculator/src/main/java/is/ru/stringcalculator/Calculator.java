@@ -7,19 +7,7 @@ public class Calculator {
 			return 0;
 		}
 		else if(text.contains(",") || text.contains("\n")){
-			String[] numbers = splitNumbers(text);
-			int total = 0;
-			for(String number : numbers)
-			{
-				if(toInt(number) > 1000)
-				{
-					continue;
-				}
-				else if(toInt(number) <= 1000)
-					total += toInt(number);	
-			}
-			return total; 
-    			
+			return sum(splitNumbers(text));
 		}
 		else 
 			return 1;
@@ -36,6 +24,8 @@ public class Calculator {
 	private static int sum(String[] numbers){
 		int total = 0;
 		for(String number : numbers){
+			if(toInt(number) > 1000)
+				continue;
 			total += toInt(number);
 		}
 		return total;
